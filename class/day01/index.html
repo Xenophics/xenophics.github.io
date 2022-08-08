@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Class</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue.js Fullpage Scroll</title>
+</head>
+<body>
+  <div id="app">
+    <div class="sections-menu">
+      <span
+         class="menu-point"
+         v-bind:class="{active: activeSection == index}"
+         v-on:click="scrollToSection(index)"
+         v-for="(offset, index) in offsets"
+         v-bind:key="index">
+      </span>
+    </div>
+    <section class="fullpage blue">
+      <h1>Vue.js Fullpage Scroll</h1>
+      <p>by <a href="https://webdeasy.de/?referer=cp-NVOEBL" target="_blank">WebDEasy</a></p>
+    </section>
+    <section class="fullpage black">
+      <h1>Section 2</h1>
+      <p>made with <a href="https://vuejs.org/" target="_blank">Vue.js</a></p>
+    </section>
+    <section class="fullpage red">
+      <h1>Section 3</h1>
+      <p>works on <b>desktop & mobile</b></p>
+    </section>
+    <section class="fullpage green">
+      <h1>Section 4</h1>
+      <p>Tutorial <a href="https://webdeasy.de/en/programming-vue-js-fullpage-scroll/?referer=cp-NVOEBL" target="_blank">here</a></p>
+    </section>
+  </div>
+</body>
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
