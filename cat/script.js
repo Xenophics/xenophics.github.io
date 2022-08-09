@@ -48,7 +48,7 @@ let handleMouseUp = (event) => {
     (async () => {
       await sleep(100);
       num++;
-      displayNum.innerText = "팝이루가 " + num +"팝!";
+      displayNum.innerText = "     " + num +"팝!";
       popcat1.classList.remove("no-display");
       popcat2.classList.add("no-display");
       popcatGroup.removeEventListener("mouseup", handleMouseUp);
@@ -69,7 +69,7 @@ let handleTouchEnd = (event) => {
   (async () => {
     await sleep(10);
     num++;
-    displayNum.innerText = "팝이루가 " + num +"팝!";
+    displayNum.innerText = "      " + num +"팝!";
     popcat1.classList.remove("no-display");
     popcat2.classList.add("no-display");
     popcatGroup.removeEventListener("touchend", handleTouchEnd);
