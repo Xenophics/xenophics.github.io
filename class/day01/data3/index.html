@@ -16,8 +16,15 @@
 
     <h2 class="text-2xl font-bold mt-6">JavaScript</h2>
     <pre class="language-javascript"><code class="language-javascript">
-     window.onload = function(){
-                document.getElementById('demo').innerHTML = "Hello, World";
+	window.onload = function(){
+                var WifeBag = 100000;
+                var SonBag = 1000;
+
+                WifeBag = WifeBag + SonBag;
+                SonBag = 0;
+
+                document.getElementById('wife').innerHTML = WifeBag;
+                document.getElementById('son').innerHTML = SonBag;
      }
     </code></pre>
 
@@ -34,7 +41,8 @@
 
     &lt;body&gt;
       &lt;main&gt;
-        &lt;p class="demo"&gt;Hello, World is Here&lt;/p&gt;
+        &lt;p class="wife"&gt;Wife bag is Here&lt;/p&gt;
+        &lt;p class="son"&gt;Son bag is Here&lt;/p&gt;
       &lt;/main&gt;
     &lt;/body&gt;
 
