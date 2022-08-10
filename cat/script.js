@@ -82,7 +82,7 @@ function store(){
 }
 
 function save(){
-    if (!confirm("50% 확률로 게임을 저장 할 수 있습니다. 실패 시 모든 수치가 초기화됩니다.")) {
+    if (!confirm("꽤 낮은 확률로 게임을 저장 할 수 있습니다. 실패 시 모든 수치가 초기화됩니다.")) {
       
     } else {
       if(Math.floor(Math.random() * 100) < 50){
