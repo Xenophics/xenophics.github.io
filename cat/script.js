@@ -81,7 +81,7 @@ function bUpgrade(){
     }
      
   }  else {
-    Msg.innerHTML = "<font color=red>고기가 부족합니다.</font>";
+    Msg.innerHTML = "<font color=red>갑옥이 부족합니다.</font>";
 }
 }
 
