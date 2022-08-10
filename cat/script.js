@@ -97,16 +97,28 @@ function save(){
          num=0;
          update();
       }
-
-  
 }
 }
 function load(){  
-  var SaveData = localStorage.getItem("pop");
-  var SavePlusScore = localStorage.getItem("pScore");
-  num = parseInt(SaveData);
-  plusScore = parseInt(SavePlusScore);
-  update();
+   if (!confirm("꽤 낮은 확률로 게임을 불러올 수 있습니다. 실패 시 모든 수치가 초기화됩니다.")) {
+      
+  } else {
+    if(Math.floor(Math.random() * 100) < 50){      
+      alert('불러오기 성공!');
+      var SaveData = localStorage.getItem("pop");
+      var SavePlusScore = localStorage.getItem("pScore");
+      num = parseInt(SaveData);
+      plusScore = parseInt(SavePlusScore);
+      update();
+    }else{
+       alert('불러오기 실패!!! 모든 값이 초기화 되었습니다.');
+       localStorage.setItem("pop", 0);
+       localStorage.setItem("pScore", 0);
+       plusScore =1;
+       num=0;
+       update();
+    }
+}
 }
 function update(){ 
   displayNum.innerText = "      " + num +"팝! ("+plusScore+"강)";
