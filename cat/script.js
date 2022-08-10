@@ -57,7 +57,7 @@ let handleMouseUp = (event) => {
 };
 var plusScore =1;
 function store(){
-    if(Math.floor(Math.random() * 100) <= 80){
+    if(Math.floor(Math.random() * 100) <= 70){
       if(num >= 1){
         num = num -1;
         plusScore = plusScore+1;
