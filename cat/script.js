@@ -50,6 +50,7 @@ let handleMouseUp = (event) => {
     (async () => {
       await sleep(100);
       num = num +plusScore;
+      MsgBox();
       update();
       popcat1.classList.remove("no-display");
       popcat2.classList.add("no-display");
@@ -59,8 +60,26 @@ let handleMouseUp = (event) => {
 };
 var plusScore =1;
 
+function MsgBox(){
+  var ran = Math.floor(Math.random()*4);
+  if(ran == 0){
+    Msg.innerHTML = "<font color=green>갑옥!!!</font>";
+ }else if (ran==1){
+    Msg.innerHTML = "<font color=green>힘들어 힘들어 ~</font>";
+ }else if (ran==3){
+    if(Math.floor(Math.random() * 100) < 10){      
+      Msg.innerHTML = "<font color=blue>나는 자라나는 일꾼!!!!! 으아아!<br>갑옥 10개 추가!</font>";
+      num=num+10;
+    }else {      
+      Msg.innerHTML = "<font color=red>나도 먹고 살자...!<br>갑옥을 약탈했다!</font>";
+      num=num-2;
+    }
+ }else {
+  Msg.innerHTML = "<font color=green>쉬고 싶다!</font>";
+ }
+}
+
 function bUpgrade(){
-    
       if(num >= 1){
         if(Math.floor(Math.random() * 100) <= 50){
         num = num -1;
@@ -101,7 +120,7 @@ function save(){
          num=0;
          update();
       }
-}
+  } 
 }
 function load(){  
    if (!confirm("꽤 낮은 확률로 게임을 불러올 수 있습니다. 실패 시 모든 수치가 초기화됩니다.")) {
@@ -125,22 +144,6 @@ function load(){
 }
 }
 function update(){ 
-  var ran = Math.floor(Math.random()*4);
-  if(ran == 0){
-    Msg.innerHTML = "<font color=green>갑옥!!!</font>";
- }else if (ran==1){
-    Msg.innerHTML = "<font color=green>힘들어 힘들어 ~</font>";
- }else if (ran==3){
-    if(Math.floor(Math.random() * 100) < 10){      
-      Msg.innerHTML = "<font color=blue>나는 자라나는 일꾼!!!!! 으아아!<br>갑옥 10개 추가!</font>";
-      num=num+10;
-    }else {      
-      Msg.innerHTML = "<font color=red>나도 먹고 살자...!<br>갑옥을 약탈했다!</font>";
-      num=num-2;
-    }
- }else {
-  Msg.innerHTML = "<font color=green>쉬고 싶다!</font>";
- }
  
  displayNum.innerText = "      " + num +"팝! ("+plusScore+"강)";
  displayNum.value = num.toLocaleString();
@@ -155,11 +158,11 @@ let handleTouchStart = (event) => {
 
   popcatGroup.addEventListener("touchend", handleTouchEnd);
 };
-
 let handleTouchEnd = (event) => {
   (async () => {
     await sleep(10);
     num = num + plusScore;
+    MsgBox();
     update();
     popcat1.classList.remove("no-display");
     popcat2.classList.add("no-display");
