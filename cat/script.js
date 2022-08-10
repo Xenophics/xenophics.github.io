@@ -5,6 +5,7 @@ let popcat1 = document.querySelector("#popcat1");
 let popcat2 = document.querySelector("#popcat2");
 let audio = document.querySelector("#audio");
 let Level = document.querySelector("#needGold");
+let Msg = document.querySelector("#Msg");
 let mobile = false;
 
 let cssVar = (val) => {
@@ -57,29 +58,31 @@ let handleMouseUp = (event) => {
   }
 };
 var plusScore =1;
+
 function bUpgrade(){
-    if(Math.floor(Math.random() * 100) <= 50){
+    
       if(num >= 1){
+        if(Math.floor(Math.random() * 100) <= 50){
         num = num -1;
         plusScore = plusScore+1;
+        Msg.innerHTML = "<font color=blue>강화에 성공했습니다!<br>"+"(클릭 당 갑옥 "+plusScore+"개 획득)</font>";
         update();
+      } else {
+        var FailUp = Math.floor(Math.random() * 10);
+        if(plusScore-FailUp <= 0){
+          Msg.innerHTML = "<font color=red>강화에 실패해 강화 수치가 "+FailUp+"만큼 하락 했습니다.<br>강화 수치가 1보다 낮아, 기본 수치로 복구 되었습니다.</font>";
+          plusScore =1;
+          update();
       }else {
-        alert('고기가 부족합니다. 고기 1개당 한 번 강화가 가능합니다.');
-    }
-  }  else {
-      var FailUp = Math.floor(Math.random() * 10);
-      if(plusScore-FailUp <= 0){
-        alert('강화에 실패해 강화 수치가 '+FailUp+"만큼 하락 했습니다.");
-        alert('강화 수치가 1보다 낮아, 기본 수치로 복구 되었습니다');
-        
-        plusScore =1;
+        Msg.innerHTML = "<font color=red>강화에 실패해 강화 수치가 "+FailUp+"만큼 하락 했습니다.</font>";
+        plusScore = plusScore - FailUp;
         update();
-    }else {
-      alert('강화에 실패해 강화 수치가 '+FailUp+"만큼 하락 했습니다.");
-      plusScore = plusScore - FailUp;
-      update();
+      }
     }
-  }
+     
+  }  else {
+    Msg.innerHTML = "<font color=red>고기가 부족합니다.</font>";
+}
 }
 
 function save(){

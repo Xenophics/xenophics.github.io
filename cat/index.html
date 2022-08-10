@@ -15,8 +15,8 @@
     <button onclick="load()">LOAD</button>
     </div>
     <br>
-    <p id="click" class="title-font">아이루의 찻집</p>
-    <p id="clickSec" class="title-font">아이루를 눌러서 갑옥을 획득하세요!</p>
+    <p id="click" class="title-font">[아이루의 메세지]</p>
+    <p id="Msg" class="title-font">아이루를 눌러서 갑옥을 획득하세요!</p>
     <div class="container col">
       <div class="popcat-group" onmousedown="handleMouseDown(event)" ontouchstart="handleTouchStart(event)">
         <img id="popcat1" class="display" src="./pop1.png" alt="" width="290px">
@@ -29,7 +29,7 @@
         <p style="font-size: 1.2em;font-weight: 800;">개 보유</p>
     </div>
     <div class="store">
-        <p class="title">찻집</p>
+        <p class="title">오묘기의 오묘한 찻집</p>
         <div class="carrotSell">
             <div class="store-block">
                 <p class="title-font">찻집 강화</p>
@@ -41,9 +41,9 @@
             <div class="store-block">
               <p class="title-font">용인증서 강화</p>
               <p id="needGold" class="title-font">레벨: 1</p>
-              <p id="nowGold" class="small-font">갑옥:+10</p>
+              <p id="nowGold" class="small-font">갑옥:+10 (10%)</p>
               <img src="./index_files/gold.png"  width="40px" alt="gold">
-              <button onclick="bUpgrade()"> 강화 </button>
+              <button onclick="sUpgrade()"> 강화 </button>
           </div>
             <div class="store-block">
                 <p class="title-font">금알 구매</p>
