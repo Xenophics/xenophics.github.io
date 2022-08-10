@@ -58,6 +58,7 @@ let handleMouseUp = (event) => {
 
 function save(){
   localStorage.setItem("pop", num);
+  alert(num+'회 저장 완료! 로컬 기반으로 캐쉬 삭제 시 초기화 됩니다.');
 }
 function load(){  
   var SaveData = localStorage.getItem("pop");
