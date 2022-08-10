@@ -85,7 +85,7 @@ function MsgBox(){
 
 function bUpgrade(){
       if(num >= 1){
-        if(Math.floor(Math.random() * 100) <= 50){
+        if(Math.floor(Math.random() * 100) <= 70){
         num = num -1;
         plusScore = plusScore+1;
         Msg.innerHTML = "<font color=blue>강화에 성공했습니다!"+"(클릭 당 갑옥 "+plusScore+"개 획득)</font>";
