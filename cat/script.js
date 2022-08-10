@@ -113,7 +113,7 @@ function load(){
     }else{
        alert('불러오기 실패!!! 모든 값이 초기화 되었습니다.');
        localStorage.setItem("pop", 0);
-       localStorage.setItem("pScore", 0);
+       localStorage.setItem("pScore", 1);
        plusScore =1;
        num=0;
        update();
