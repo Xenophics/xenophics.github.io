@@ -4,6 +4,7 @@ let popcatGroup = document.querySelector(".popcat-group");
 let popcat1 = document.querySelector("#popcat1");
 let popcat2 = document.querySelector("#popcat2");
 let audio = document.querySelector("#audio");
+let Level = document.querySelector("#needGold");
 let mobile = false;
 
 let cssVar = (val) => {
@@ -56,14 +57,14 @@ let handleMouseUp = (event) => {
   }
 };
 var plusScore =1;
-function store(){
-    if(Math.floor(Math.random() * 100) <= 70){
+function bUpgrade(){
+    if(Math.floor(Math.random() * 100) <= 50){
       if(num >= 1){
         num = num -1;
         plusScore = plusScore+1;
         update();
       }else {
-        alert('팝 수가 부족합니다. 1팝 당 경단 강화가 가능합니다.');
+        alert('고기가 부족합니다. 고기 1개당 한 번 강화가 가능합니다.');
     }
   }  else {
       var FailUp = Math.floor(Math.random() * 10);
@@ -103,7 +104,7 @@ function load(){
    if (!confirm("꽤 낮은 확률로 게임을 불러올 수 있습니다. 실패 시 모든 수치가 초기화됩니다.")) {
       
   } else {
-    if(Math.floor(Math.random() * 100) < 50){      
+    if(Math.floor(Math.random() * 100) < 70){      
       alert('불러오기 성공!');
       var SaveData = localStorage.getItem("pop");
       var SavePlusScore = localStorage.getItem("pScore");
@@ -122,6 +123,8 @@ function load(){
 }
 function update(){ 
   displayNum.innerText = "      " + num +"팝! ("+plusScore+"강)";
+  displayNum.value = num.toLocaleString();
+  Level.innerText = "레벨: " +plusScore;
 }
 
 let handleTouchStart = (event) => {

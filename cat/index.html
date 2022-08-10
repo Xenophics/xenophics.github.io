@@ -3,22 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-  <title>아이루 강화 룰루옥 팝</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>아이루 룰루옥 강화</title>
+  <link rel="stylesheet" href="./style.css"> 
+  <link rel="stylesheet" href="./index_files/style.css">
 
 </head>
 <body>
-  <div class="container col">
-    <h1 id="num-clicked">아이루 강화 룰루옥팝</h1>
-    <p><a href="#" onclick="store()">경단강화</a> | <a href="#" onclick="save()">저장하기</a> | <a href="#" onclick="load()">불러오기</a></p>
-	
-
-    <div class="popcat-group" onmousedown="handleMouseDown(event)" ontouchstart="handleTouchStart(event)">
-      <img id="popcat1" class="display" src="./pop1.png" alt="" width="400px">
-      <img id="popcat2" class="no-display" src="./pop2.png" alt="" width="400px">
+  <div class="app">
+    <div class="saveOrload">
+    <button onclick="save()">SAVE</button>
+    <button onclick="load()">LOAD</button>
     </div>
-  </div>
+    <br>
+    <p id="click" class="title-font">아이루의 찻집</p>
+    <p id="clickSec" class="title-font">아이루를 눌러서 갑옥을 획득하세요!</p>
+    <div class="container col">
+      <div class="popcat-group" onmousedown="handleMouseDown(event)" ontouchstart="handleTouchStart(event)">
+        <img id="popcat1" class="display" src="./pop1.png" alt="" width="290px">
+        <img id="popcat2" class="no-display" src="./pop2.png" alt="" width="290px">
+      </div>
+    </div>
+    <div class="title-score">
+        <img src="./index_files/gob.png" width="40px"alt="갑옥">
+        <input id="num-clicked" class="score" type="text" value="0" disabled="">
+        <p style="font-size: 1.2em;font-weight: 800;">개 보유</p>
+    </div>
+    <div class="store">
+        <p class="title">찻집</p>
+        <div class="carrotSell">
+            <div class="store-block">
+                <p class="title-font">찻집 강화</p>
+                <p id="needGold" class="title-font">레벨: 1</p>
+                <p id="nowGold" class="small-font">갑옥:+1 (50%)</p>
+                <img src="./index_files/show.png" width="40px" alt="gold">
+                <button onclick="bUpgrade()"> 강화 </button>
+            </div>
+            <div class="store-block">
+              <p class="title-font">용인증서 강화</p>
+              <p id="needGold" class="title-font">레벨: 1</p>
+              <p id="nowGold" class="small-font">갑옥:+10</p>
+              <img src="./index_files/gold.png"  width="40px" alt="gold">
+              <button onclick="bUpgrade()"> 강화 </button>
+          </div>
+            <div class="store-block">
+                <p class="title-font">금알 구매</p>
+                <p id="needFarm" class="title-font">현금 1,000원</p>
+                <p id="nowFarm" class="small-font">보유 : 0 장</p>
+                <img src="./index_files/egg.png" width="40px" alt="farm">
+                <button onclick="buyFarm()"> 구매 </button>
+            </div>
+        </div>
+    </div>
 
+
+    <div>
+        <p style="background-color:bisque;text-align:center;font-weight: 800;font-size: 1.2em;">
+            아이룰루옥 팝 ver1.0
+        </p>
+    </div>
   <audio id="audio" src="./popcat-sound.mp3"></audio>
 <!-- partial -->
   <script  src="./script.js"></script>

@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.saveOrload {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+}
+
+.saveOrload > button {
+  width: 100px;
+  height: 30px;
+  font-size: 1.25em;
+  font-weight: 800;
+  background-color: coral;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(50, 50, 93, 0.11);
+}
+
+.saveOrload > button:hover {
+  font-size: 1.3em;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.app {
+  background-color: white;
+  width: 400px;
+  height: 819.1px;
+  margin: 0 auto;
+}
+
+.rabbit {
+  width: 400px;
+}
+
+.rabbit img {
+  width: 400px;
+}
+
+.title-score {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.2vh;
+  background-color: #d7e9c6;
+}
+
+.score {
+  width: 250px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 800;
+  background-color: #b3d493;
+  color: white;
+  border-top: 1px solid rgb(104, 104, 104);
+  border-bottom: 1px solid rgb(104, 104, 104);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(50, 50, 93, 0.11);
+}
+
+.store {
+  width: auto;
+  height: auto;
+}
+
+.store .title {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 800;
+  width: 400px;
+  background-color: #ecf3e5;
+}
+
+.title-font {
+  text-align: center;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+.small-font {
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: 800;
+}
+
+.carrotSell {
+  white-space: nowrap;
+  overflow-x: auto;
+  background-color: rgb(174, 173, 173);
+  display: flex;
+}
+
+.carrotSell > .store-block {
+  display: grid;
+  gap: 3.4px;
+  text-align: center;
+  justify-items: center;
+  padding: 1vh;
+  margin: 1.5vh;
+  align-items: center;
+  width: 130px;
+  height: auto;
+  background-color: #ecf3e5;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(50, 50, 93, 0.11);
+}
+
+.carrotSell > .store-block > button {
+  font-size: 1.2em;
+  background-color: #b3d493;
+  font-weight: 500;
+  width: 60px;
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
+  border-radius: 15px;
+}
+
+.carrotSell > .store-block > button:hover {
+  font-size: 1.2em;
+  background-color: #9dc07b;
+  font-weight: 600;
+  width: 60px;
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
+  border-radius: 15px;
+  cursor: pointer;
+}
