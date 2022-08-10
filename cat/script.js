@@ -88,7 +88,7 @@ function bUpgrade(){
         if(Math.floor(Math.random() * 100) <= 50){
         num = num -1;
         plusScore = plusScore+1;
-        Msg.innerHTML = "<font color=blue>강화에 성공했습니다!<br>"+"(클릭 당 갑옥 "+plusScore+"개 획득)</font>";
+        Msg.innerHTML = "<font color=blue>강화에 성공했습니다!"+"(클릭 당 갑옥 "+plusScore+"개 획득)</font>";
         update();
       } else {
         var FailUp = Math.floor(Math.random() * 10);
