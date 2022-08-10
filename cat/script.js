@@ -71,8 +71,12 @@ function MsgBox(){
       Msg.innerHTML = "<font color=blue>나는 자라나는 일꾼!!!!! 으아아!<br>갑옥 10개 추가!</font>";
       num=num+10;
     }else {      
-      Msg.innerHTML = "<font color=red>나도 먹고 살자...!<br>갑옥을 약탈했다!</font>";
-      num=num-2;
+      if(num <=2){
+
+      }else {
+        Msg.innerHTML = "<font color=red>나도 먹고 살자...!<br>갑옥을 약탈했다!</font>";
+        num=num-2;
+      }
     }
  }else {
   Msg.innerHTML = "<font color=green>쉬고 싶다!</font>";
