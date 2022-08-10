@@ -4,6 +4,8 @@ let popcatGroup = document.querySelector(".popcat-group");
 let popcat1 = document.querySelector("#popcat1");
 let popcat2 = document.querySelector("#popcat2");
 let audio = document.querySelector("#audio");
+let fail_audio = document.querySelector("#fail");
+let se = document.querySelector("#se");
 let Level = document.querySelector("#needGold");
 let Msg = document.querySelector("#Msg");
 let mobile = false;
@@ -88,6 +90,7 @@ function bUpgrade(){
         if(Math.floor(Math.random() * 100) <= 70){
         num = num -1;
         plusScore = plusScore+1;
+        se.play();
         Msg.innerHTML = "<font color=blue>강화에 성공했습니다!"+"(클릭 당 갑옥 "+plusScore+"개 획득)</font>";
         update();
       } else {
@@ -95,10 +98,14 @@ function bUpgrade(){
         if(plusScore-FailUp <= 0){
           Msg.innerHTML = "<font color=red>강화 실패! 레벨이 "+FailUp+"만큼 하락 했습니다. (최소 1레벨)</font>";
           plusScore =1;
+          fail_audio.play();
           update();
       }else {
         Msg.innerHTML = "<font color=red>강화 실패! 레벨이  "+FailUp+"만큼 하락 했습니다.</font>";
         plusScore = plusScore - FailUp;
+        
+        fail_audio.play();
+
         update();
       }
     }
