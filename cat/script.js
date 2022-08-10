@@ -47,32 +47,50 @@ let handleMouseUp = (event) => {
   if (mobile == false) {
     (async () => {
       await sleep(100);
-      num++;
       num = num +plusScore;
-      displayNum.innerText = "     " + num +"팝!";
+      update();
       popcat1.classList.remove("no-display");
       popcat2.classList.add("no-display");
       popcatGroup.removeEventListener("mouseup", handleMouseUp);
     })();
   }
 };
-var plusScore =0;
+var plusScore =1;
 function store(){
-  if(num >= 200){
-    num = num -200;
-    plusScore = plusScore+1;
-    update();
-  }else {
-    alert('팝 수가 부족합니다. 200팝 당 경단 강화가 가능합니다.')
+    if(Math.floor(Math.random() * 100) <= 80){
+      if(num >= 1){
+        num = num -1;
+        plusScore = plusScore+1;
+        update();
+      }else {
+        alert('팝 수가 부족합니다. 1팝 당 경단 강화가 가능합니다.');
+    }
+  }  else {
+      var FailUp = Math.floor(Math.random() * 10);
+      if(plusScore-FailUp <= 0){
+        alert('강화에 실패해 강화 수치가 '+FailUp+"만큼 하락 했습니다.");
+        alert('강화 수치가 1보다 낮아, 기본 수치로 복구 되었습니다');
+        
+        plusScore =1;
+        update();
+    }else {
+      alert('강화에 실패해 강화 수치가 '+FailUp+"만큼 하락 했습니다.");
+      plusScore = plusScore - FailUp;
+      update();
+    }
   }
 }
+
 function save(){
   localStorage.setItem("pop", num);
+  localStorage.setItem("pScore", plusScore);
   alert(num+'회 저장 완료! 로컬 기반으로 캐쉬 삭제 시 초기화 됩니다.');
 }
 function load(){  
   var SaveData = localStorage.getItem("pop");
-  num = SaveData;
+  var SavePlusScore = localStorage.getItem("pScore");
+  num = parseInt(SaveData);
+  plusScore = parseInt(SavePlusScore);
   update();
 }
 function update(){ 
@@ -91,9 +109,8 @@ let handleTouchStart = (event) => {
 let handleTouchEnd = (event) => {
   (async () => {
     await sleep(10);
-    num++;
-    num = num +plusScore;
-    displayNum.innerText = "      " + num +"팝!";
+    num = num + plusScore;
+    update();
     popcat1.classList.remove("no-display");
     popcat2.classList.add("no-display");
     popcatGroup.removeEventListener("touchend", handleTouchEnd);
