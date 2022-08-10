@@ -93,7 +93,7 @@ function bUpgrade(){
       } else {
         var FailUp = Math.floor(Math.random() * 10);
         if(plusScore-FailUp <= 0){
-          Msg.innerHTML = "<font color=red>강화에 실패해 강화 수치가 "+FailUp+"만큼 하락 했습니다.<br>강화 수치가 1보다 낮아, 기본 수치로 복구 되었습니다.</font>";
+          Msg.innerHTML = "<font color=red>강화에 실패해 강화 수치가 "+FailUp+"만큼 하락 했습니다. (1강으로 복구)</font>";
           plusScore =1;
           update();
       }else {
