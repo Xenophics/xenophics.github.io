@@ -82,10 +82,10 @@ function store(){
 }
 
 function save(){
-    if (!confirm("꽤 낮은 확률로 게임을 저장 할 수 있습니다. 실패 시 모든 수치가 초기화됩니다.")) {
+    if (!confirm("높은 확률로 게임을 저장 할 수 있습니다. 실패 시 모든 수치가 초기화됩니다.")) {
       
     } else {
-      if(Math.floor(Math.random() * 100) < 50){
+      if(Math.floor(Math.random() * 100) < 80){
           localStorage.setItem("pop", num);
           localStorage.setItem("pScore", plusScore);
          alert(num+'회 저장 완료! 로컬 기반으로 캐쉬 삭제 시 초기화 됩니다.');
