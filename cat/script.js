@@ -48,6 +48,7 @@ let handleMouseUp = (event) => {
     (async () => {
       await sleep(100);
       num++;
+      num = num +plusScore;
       displayNum.innerText = "     " + num +"팝!";
       popcat1.classList.remove("no-display");
       popcat2.classList.add("no-display");
@@ -55,7 +56,16 @@ let handleMouseUp = (event) => {
     })();
   }
 };
-
+var plusScore =0;
+function store(){
+  if(num >= 200){
+    num = num -200;
+    plusScore = plusScore+1;
+    update();
+  }else {
+    alert('팝 수가 부족합니다. 200팝 당 경단 강화가 가능합니다.')
+  }
+}
 function save(){
   localStorage.setItem("pop", num);
   alert(num+'회 저장 완료! 로컬 기반으로 캐쉬 삭제 시 초기화 됩니다.');
@@ -66,7 +76,7 @@ function load(){
   update();
 }
 function update(){ 
-  displayNum.innerText = "      " + num +"팝!";
+  displayNum.innerText = "      " + num +"팝! ("+plusScore+"강)";
 }
 
 let handleTouchStart = (event) => {
@@ -82,6 +92,7 @@ let handleTouchEnd = (event) => {
   (async () => {
     await sleep(10);
     num++;
+    num = num +plusScore;
     displayNum.innerText = "      " + num +"팝!";
     popcat1.classList.remove("no-display");
     popcat2.classList.add("no-display");
