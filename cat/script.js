@@ -93,11 +93,11 @@ function bUpgrade(){
       } else {
         var FailUp = Math.floor(Math.random() * 10);
         if(plusScore-FailUp <= 0){
-          Msg.innerHTML = "<font color=red>강화에 실패해 강화 수치가 "+FailUp+"만큼 하락 했습니다. (1강으로 복구)</font>";
+          Msg.innerHTML = "<font color=red>강화 실패! 레벨이 "+FailUp+"만큼 하락 했습니다. (최소 1레벨)</font>";
           plusScore =1;
           update();
       }else {
-        Msg.innerHTML = "<font color=red>강화에 실패해 강화 수치가 "+FailUp+"만큼 하락 했습니다.</font>";
+        Msg.innerHTML = "<font color=red>강화 실패! 레벨이  "+FailUp+"만큼 하락 했습니다.</font>";
         plusScore = plusScore - FailUp;
         update();
       }
