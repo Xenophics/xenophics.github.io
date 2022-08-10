@@ -104,7 +104,7 @@ function bUpgrade(){
     }
      
   }  else {
-    Msg.innerHTML = "<font color=red>갑옥이 부족합니다.</font>";
+    Msg.innerHTML = "<font color=red>갑옥이 1개 필요합니다.</font>";
 }
 }
 
