@@ -125,9 +125,6 @@ function load(){
 }
 }
 function update(){ 
-  displayNum.innerText = "      " + num +"팝! ("+plusScore+"강)";
-  displayNum.value = num.toLocaleString();
-  Level.innerText = "레벨: " +plusScore;
   var ran = Math.floor(Math.random()*4);
   if(ran == 0){
     Msg.innerHTML = "<font color=green>갑옥!!!</font>";
@@ -136,14 +133,18 @@ function update(){
  }else if (ran==3){
     if(Math.floor(Math.random() * 100) < 10){      
       Msg.innerHTML = "<font color=blue>나는 자라나는 일꾼!!!!! 으아아!<br>갑옥 100개 추가!</font>";
-      num=num+100;
+      num=num+10;
     }else {      
       Msg.innerHTML = "<font color=red>나도 먹고 살자...!<br>갑옥을 약탈했다!</font>";
-      num=num-1;
+      num=num-2;
     }
  }else {
   Msg.innerHTML = "<font color=green>쉬고 싶다!</font>";
  }
+ 
+ displayNum.innerText = "      " + num +"팝! ("+plusScore+"강)";
+ displayNum.value = num.toLocaleString();
+ Level.innerText = "레벨: " +plusScore;
 }
 
 let handleTouchStart = (event) => {
