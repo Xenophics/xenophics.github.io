@@ -132,7 +132,7 @@ function update(){
     Msg.innerHTML = "<font color=green>힘들어 힘들어 ~</font>";
  }else if (ran==3){
     if(Math.floor(Math.random() * 100) < 10){      
-      Msg.innerHTML = "<font color=blue>나는 자라나는 일꾼!!!!! 으아아!<br>갑옥 100개 추가!</font>";
+      Msg.innerHTML = "<font color=blue>나는 자라나는 일꾼!!!!! 으아아!<br>갑옥 10개 추가!</font>";
       num=num+10;
     }else {      
       Msg.innerHTML = "<font color=red>나도 먹고 살자...!<br>갑옥을 약탈했다!</font>";
