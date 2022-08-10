@@ -56,13 +56,16 @@ let handleMouseUp = (event) => {
   }
 };
 
-function rank(){
-  var userInput = prompt("등록할 닉네임을 입력하세요!"+"");
-  if(num < 1000000000000) {
-    alert(userInput+"님, 총 "+num+"번 팝하셨으며 순위권 밖으로 랭킹에 등록되지 않습니다!");
-  }else {
-    alert(userInput+"님, 총 "+num+"번 팝하셨으며 1등입니다.");
-  }
+function save(){
+  localStorage.setItem("pop", num);
+}
+function load(){  
+  var SaveData = localStorage.getItem("pop");
+  num = SaveData;
+  update();
+}
+function update(){ 
+  displayNum.innerText = "      " + num +"팝!";
 }
 
 let handleTouchStart = (event) => {
