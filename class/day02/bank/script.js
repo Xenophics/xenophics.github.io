@@ -7,7 +7,6 @@ window.onload = function(){
      p_corp = document.querySelector("#p_corp"); 
      p_account = document.querySelector("#p_account"); 
 
-
     // 계정 변수
      p_amount = document.querySelector("#amount"); 
      p_des = document.querySelector("#desc"); 
@@ -21,11 +20,11 @@ window.onload = function(){
 
 var dMoney =0;
 var dDes =0;
-var Total_Bal =0;
+var Total_Balance =0;
 var num=1;
 
 function Total_update() {
-    Total_Bal = parseInt(Total_Bal)+parseInt(input_money);
+    Total_Balance = parseInt(Total_Balance)+parseInt(input_money);
     p_balance.innerHTML = Total_Bal + "원";
 }
 
