@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Day2_은행 시뮬레이터 만들기</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.7.6/tailwind.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="page dark">
+  <article class="container">
+    <h2 class="text-2xl font-bold mt-6">Day2_은행 시뮬레이터 만들기</h2>
+    <p>학습 조직 2일차 학습 자료입니다.</p>
+
+    <h2 class="text-2xl font-bold mt-6">JavaScript</h2>
+    <pre class="language-javascript">
+      <code class="language-javascript">
+        let p_name,p_corp, p_email, p_account, p_amount, p_balance,p_des;
+
+        window.onload = function(){
+             // 프로필 변수
+             p_name = document.querySelector("#p_name"); 
+             p_email = document.querySelector("#p_email"); 
+             p_corp = document.querySelector("#p_corp"); 
+             p_account = document.querySelector("#p_account"); 
+        
+        
+            // 계정 변수
+             p_amount = document.querySelector("#amount"); 
+             p_des = document.querySelector("#desc"); 
+             p_balance = document.querySelector("#dbalance"); 
+        
+            // 날짜를 한국 식으로 가져오는 방법 
+            const date = new Date();
+            var Today = date.toLocaleString('ko-kr');
+        }
+        
+    </code>
+  </pre>
+
+    <h2 class="text-2xl font-bold mt-6">HTML</h2>
+    <pre class="language-html"><code class="language-html">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang="en"&gt;
+     
+      &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;MXG Bank &lt;/title&gt;
+     
+        &lt;!-- 1. 스크립트 파일 링크 --&gt;
+        &lt;script src="./script.js"&gt; &lt;/script&gt;
+     
+        &lt;!-- 2. 부르스트랩 라이브러리 --&gt;
+        &lt;link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'&gt;
+     
+      &lt;/head&gt;
+     
+      &lt;body&gt;
+        &lt;div class="container"&gt;
+          &lt;div class="card"&gt;
+            &lt;div class="card-header"&gt;
+     
+              &lt;!-- 3. 은행 명 --&gt;
+              &lt;strong&gt;MXG Bank &lt;/strong&gt;
+              &lt;span class="float-right"&gt;
+     
+                &lt;!-- 4. 날짜가 들어가는 공간 --&gt;
+                &lt;strong&gt;Date: &lt;/strong&gt; &lt;span id="date"&gt;날짜 &lt;/span&gt;
+              &lt;/span&gt;
+     
+            &lt;/div&gt;
+            &lt;div class="card-body"&gt;
+              &lt;div class="row mb-4"&gt;
+                &lt;div class="col-sm-6"&gt;
+     
+                  &lt;!-- 5. 계정 정보 --&gt;
+                  &lt;div&gt;
+                    &lt;strong&gt; &lt;span id="p_name"&gt;이름 &lt;/span&gt; &lt;/strong&gt;
+                  &lt;/div&gt;
+                  &lt;div&gt;Corp:  &lt;span id="p_corp"&gt;회사 &lt;/span&gt; &lt;/div&gt;
+                  &lt;div&gt;Email:  &lt;span id="p_email"&gt;이메일 &lt;/span&gt; &lt;/div&gt;
+                  &lt;div&gt;Account:  &lt;span id="p_account"&gt;계정 &lt;/span&gt; &lt;/div&gt;
+                &lt;/div&gt;
+     
+                &lt;!-- 입력 창이 있는 곳 --&gt;
+                &lt;div class="input-group" style="width: 97%;margin-left: 10px;margin-top: 10px;"&gt;
+                  &lt;input type="number" class="form-control" placeholder="Amount" id="amount"&gt;
+                  &lt;input type="text" class="form-control" placeholder="Description" id="desc"&gt;
+                  &lt;button class="btn btn-outline-secondary" type="button" onclick="deposit()"&gt;Deposit &lt;/button&gt;
+                  &lt;button class="btn btn-outline-secondary" type="button" onclick="withdrawal()"&gt;Withdrawal &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;!-- 입력창 끝 --&gt;
+     
+              &lt;!-- 6. 기본 표 --&gt;
+              &lt;div class="table-responsive-sm"&gt;
+                &lt;table class="table table-striped"&gt;
+                  &lt;thead&gt;
+                    &lt;tr&gt;
+                      &lt;th class="center"&gt;# &lt;/th&gt;
+                      &lt;th&gt;Type &lt;/th&gt;
+                      &lt;th&gt;Description &lt;/th&gt;
+                      &lt;th class="right"&gt;Amount &lt;/th&gt;
+                    &lt;/tr&gt;
+                  &lt;/thead&gt;
+     
+                  &lt;!-- 입력창에서 넣은 값이 들어와야 하는 곳 --&gt;
+                  &lt;tbody id="dTable"&gt;
+     
+                  &lt;/tbody&gt;
+                  &lt;!-- 입력창에서 넣은 값이 들어와야 하는 곳 --&gt;
+     
+     
+                &lt;/table&gt;
+              &lt;/div&gt;
+              &lt;div class="row"&gt;
+                &lt;div class="col-lg-4 col-sm-5"&gt;
+     
+                &lt;/div&gt;
+     
+                &lt;div class="col-lg-4 col-sm-5 ml-auto"&gt;
+                  &lt;table class="table table-clear"&gt;
+                    &lt;tbody&gt;
+                      &lt;!-- 더해진 값을 넣을 공간 --&gt;
+                      &lt;tr&gt;
+                        &lt;td class="left"&gt;
+                          &lt;strong&gt;Balance &lt;/strong&gt;
+                        &lt;/td&gt;
+                        &lt;td class="right"&gt;
+                          &lt;strong&gt; &lt;span id="dbalance"&gt; 100000원 &lt;/span&gt; &lt;/strong&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                  &lt;/table&gt;
+     
+                &lt;/div&gt;
+     
+              &lt;/div&gt;
+     
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/body&gt;
+     
+      &lt;/html&gt;
+    </code></pre>
+
+    <h2 class="text-2xl font-bold mt-6">CSS</h2>
+    <pre class="language-css"><code class="language-css">
+    /*! bootstrap Lib */
+    </code></pre>
+  </article>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js'></script>
+</body>
+</html>

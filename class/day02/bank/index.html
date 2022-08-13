@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MXG Bank</title>
+
+  <!-- 1. 스크립트 파일 링크 -->
+  <script src="./script.js"></script>
+
+  <!-- 2. 부르스트랩 라이브러리 -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+
+        <!-- 3. 은행 명 -->
+        <strong>MXG Bank</strong>
+        <span class="float-right">
+
+          <!-- 4. 날짜가 들어가는 공간 -->
+          <strong>Date:</strong><span id="date">날짜</span>
+        </span>
+
+      </div>
+      <div class="card-body">
+        <div class="row mb-4">
+          <div class="col-sm-6">
+
+            <!-- 5. 계정 정보 -->
+            <div>
+              <strong><span id="p_name">이름</span></strong>
+            </div>
+            <div>Corp: <span id="p_corp">회사</span></div>
+            <div>Email: <span id="p_email">이메일</span></div>
+            <div>Account: <span id="p_account">계정</span></div>
+          </div>
+
+          <!-- 입력 창이 있는 곳 -->
+          <div class="input-group" style="width: 97%;margin-left: 10px;margin-top: 10px;">
+            <input type="number" class="form-control" placeholder="Amount" id="amount">
+            <input type="text" class="form-control" placeholder="Description" id="desc">
+            <button class="btn btn-outline-secondary" type="button" onclick="deposit()">Deposit</button>
+            <button class="btn btn-outline-secondary" type="button" onclick="withdrawal()">Withdrawal</button>
+          </div>
+        </div>
+        <!-- 입력창 끝 -->
+
+        <!-- 6. 기본 표 -->
+        <div class="table-responsive-sm">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="center">#</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th class="right">Amount</th>
+              </tr>
+            </thead>
+
+            <!-- 입력창에서 넣은 값이 들어와야 하는 곳 -->
+            <tbody id="dTable">
+
+            </tbody>
+            <!-- 입력창에서 넣은 값이 들어와야 하는 곳 -->
+
+
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-5">
+
+          </div>
+
+          <div class="col-lg-4 col-sm-5 ml-auto">
+            <table class="table table-clear">
+              <tbody>
+                <!-- 더해진 값을 넣을 공간 -->
+                <tr>
+                  <td class="left">
+                    <strong>Balance</strong>
+                  </td>
+                  <td class="right">
+                    <strong><span id="dbalance">0원</span></strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
