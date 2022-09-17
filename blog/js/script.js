@@ -7,10 +7,10 @@ window.onload = function(){
 }
 
 function SetProfile(){
-  document.title =  "Xenophics";
-  profile_name.innerHTML = "Xenophics";
-  profile_avatar.src = "./avatar.gif";
-  intro_main.innerHTML = "GOLF";
+  document.title =  "실버데이의 항해 일지";
+  profile_name.innerHTML = "실버데이";
+  profile_avatar.src = "./profile.jpg";
+  intro_main.innerHTML = "실버데이의 항해 일지";
   intro_sub.innerHTML = "During the 2022 Xbox Games Showcase Event we told the story of an unremitting conflict between the Burning Hells and High Heavens, foretold the return of Lilith, Sanctuary’s demonic creator, and shared scorching-hot details around the next installment in the Diablo saga—Diablo IV. Before you read further, we are excited to announce that Diablo IV will launch in 2023 on Windows PC, Xbox One X|S, Xbox Series X|S, PlayStation 4/5 and will host cross-play and cross-progression for all platforms. On console, players may also slay demons side-by-side with a friend through couch-co-op. We have another bone-chilling announcement: in addition to the Barbarian, Druid, Rogue, and Sorceress, the fifth and final class available at launch is the scythe-wielding purveyor of death, the Necromancer!";
 }
 function init(){
